@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Csk.Development.JsValidate.Models.Test>
+
+@{
+    ViewBag.Title = "列表";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>列表</h2>
+
+<div class="container">
+    <h2>基础表格</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model=>model.Names)</th>
+            <th>@Html.DisplayNameFor(model=>model.Age)</th>
+            <th>@Html.DisplayNameFor(model=>model.Phone)</th>
+            <th>@Html.DisplayNameFor(model=>model.Reamrk)</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var model in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem=>model.Names)</td>
+                <td>@Html.DisplayFor(modelItem=>model.Age)</td>
+                <td>@Html.DisplayFor(modelItem=>model.Phone)</td>
+                <td>@Html.DisplayFor(modelItem=>model.Reamrk)</td>
+                <td>
+                    @Html.ActionLink("编辑","Edit",new { id=model.Id})|
+                </td>
+            </tr>
+        }
+        
+
+        </tbody>
+    </table>
+</div>

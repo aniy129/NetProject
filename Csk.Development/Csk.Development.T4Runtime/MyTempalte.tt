@@ -1,0 +1,24 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<html>
+<title>我的模板转换</title>
+<body>
+<# 
+	foreach (string item in items)
+	{
+		var str=item.PadLeft(30,'*');
+		 #>
+
+		 <div>
+		 我的测试值哈：<#= str #>
+		 </div>
+
+		 <# 
+	}
+#>
+
+</body>
+</html>

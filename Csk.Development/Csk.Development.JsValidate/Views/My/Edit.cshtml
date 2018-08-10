@@ -1,0 +1,42 @@
+﻿@model Csk.Development.JsValidate.Models.Test
+@{
+    ViewBag.Title = "Edit";
+   // Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = null;
+}
+
+<div class="container">
+    <h2>编辑</h2>
+    <form method="post">
+        <ul class="list-group">
+            <li class="list-group-item">
+                @Html.LabelFor(model => model.Names) :
+                @Html.EditorFor(model => model.Names)
+                @Html.ValidationMessageFor(model => model.Names,"",new {@class= "text-danger" })
+            </li>
+            <li class="list-group-item">
+                @Html.LabelFor(model => model.Age) :
+                @Html.EditorFor(model => model.Age)
+                @Html.ValidationMessageFor(model => model.Age,"", new { @class = "text-danger" })
+            </li>
+            <li class="list-group-item">
+                @Html.LabelFor(model => model.Phone) :
+                @Html.EditorFor(model => model.Phone)
+                @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+            </li>
+            <li class="list-group-item">
+                @Html.LabelFor(model => model.Reamrk) :
+                @Html.EditorFor(model => model.Reamrk)
+                @Html.ValidationMessageFor(model => model.Reamrk)
+            </li>
+            <li class="list-group-item">
+                @Html.HiddenFor(model => model.Id)
+                <input type="submit" value="保存" />
+            </li>
+        </ul>
+    </form>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
